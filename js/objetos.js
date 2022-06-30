@@ -137,3 +137,13 @@ const alumnos = [{
 ]
 
 console.log(alumnos[3].notas.segundoBim);
+
+//solución
+alumnos.forEach((estudiante, indice) => {
+    estudiante = alumnos[indice];
+    let nombre = estudiante.nombre;
+    let apellido = estudiante.apellido;
+    let notas = estudiante.notas;
+    let promedio = (notas.primerBim + notas.segundoBim + notas.tercerBim + notas.cuartoBim) / 4;
+    console.log(`Nombre : ${nombre} \nApellido : ${apellido}\nPromedio : ${promedio.toFixed()}`);
+});
