@@ -37,7 +37,7 @@ for (let i = 10; i >= 0 ; i--) {
 //5.Crear un bucle que cuente todos los números pares hasta el 100
 console.log( "\n" + "5.- Ciclo for que cuenta los numeros pares del 0 al 100 ")
 
-let pares = [];
+let pares = "";
 for (let i = 1; i <= 100; i++) {
   if (i % 2 == 0) {
     pares = i;
@@ -56,7 +56,7 @@ let num,Acumula,suma
          for(let i=101; i <= num; i++){
          
          suma=Acumula+i;
-         Acumula=suma;                                                             
+         Acumula=suma +i;                                                             
          console.log(suma+",");
          
 }
@@ -65,23 +65,30 @@ let num,Acumula,suma
 
 console.log( "\n" + "7.- Imprima el siguiente patrón con el ciclo for por consola ")
 //7.Imprima el siguiente patrón con el ciclo for por consola:
-for(let i = 0; i <= 5; i++){
-    let cadena = '';
+// for(let i = 1; i < 5; i++){
+//     let cadena = '';
 
-    for(let j = 0; j < i; j++){
-      cadena += '* ';
+//     for(let j = 0; j < i; j++){
+//       cadena += '* ';
+//     }
+//     console.log(cadena)
+//   }
+
+//   for (let i = 4; i > 0; i--){
+//     let cadena = '';
+
+//     for(let j = 0; j < i; j++){
+//       cadena += '* ';
+//     }
+//     console.log(cadena)
+//   }
+//Opcion-2
+    let l = 5;
+    let tmp = 0;
+    for (let i = 0; i <= ((l*2)-1); i++) {
+        tmp += i > l ? 1 : 0
+        console.log( (" *").repeat( (i > l ? l : i) - tmp ) )
     }
-    console.log(cadena)
-  }
-
-  for (let i = 4; i > 0; i--){
-    let cadena = '';
-
-    for(let j = 0; j < i; j++){
-      cadena += '* ';
-    }
-    console.log(cadena)
-  }
 
 //8.Imprima el siguiente patrón con el ciclo for por consola:
 
