@@ -22,6 +22,21 @@ var NuevoParametro = array3.unshift('e');
 console.log(array3)
 
 
+function firstElement(value, n){
+  if (value == null){
+    return 'ingresa un array';
+  }
+  if(n == null){
+    return value[0];
+  }
+  if(n < 0){
+    return [];
+  }
+  return value.slice(value, n);
+}
+console.log(firstElement([7,9,0,-2],2));
+
+
 //4) Escriba una función JavaScript para obtener el último elemento de un Array. Pasar un parámetro 'n' devolverá los últimos 'n' elementos del Array.
 
 let arr10=[0, 2, 4, 6, 8];  
@@ -33,6 +48,8 @@ getLastArrItem(arr10);
 
 let NuevoParametro2 = arr10.push(10);
 console.log(arr10)
+
+
 
 //5) Escriba un programa JavaScript simple para unir todos los elementos de la siguiente matriz en una cadena.
 // Matriz de muestra: 
@@ -63,7 +80,20 @@ console.log(numEnteros.sort(function(a, b){return a - b}))
       9
       4
 */
+let matrices = [
+  [1, 2, 1, 24], 
+  [8, 11, 9, 4], 
+  [7, 0, 7, 27], 
+  [7, 4, 28, 14], 
+  [3, 10, 26, 7]
+];
 
+matrices.forEach((element, index) =>{
+  console.log(`Row ${index}`) ;
+    element.forEach((child) => {
+      console.log(child);
+    });
+});
 //8) Escribe una función JavaScript para encontrar la suma de cuadrados de un array numérico.
 function sumarCuadrados(numero){
   if (!Array.isArray(numero)){
@@ -76,7 +106,7 @@ function sumarCuadrados(numero){
   
 }
 try{
-  console.log(sumarCuadrados([1,2,3,4,5]));
+  console.log(sumarCuadrados([0,1,2,3,4]));
 }catch (e){
   console.log("Error")
 }
@@ -107,3 +137,15 @@ let segundoArray = ['a', 'b', 'c', 'x', 'y', 'z'];
 let tercerArray = primerArray.filter(element => !segundoArray.includes(element)).
     concat(segundoArray.filter(element => !primerArray.includes(element)))
 console.log(tercerArray)
+
+
+const elevadorMasCercano = (ubicacionDelIzquierdo, ubicacionDelDerecho, pisoDesdeDondeSeLlama) => {
+
+	let distanciaIzquierda = Math.abs(pisoDesdeDondeSeLlama - ubicacionDelIzquierdo),
+		distanciaDerecha = Math.abs(pisoDesdeDondeSeLlama - ubicacionDelDerecho);
+
+	if (distanciaIzquierda < distanciaDerecha) return "izquierda";
+
+	return "derecha";
+}
+console.log(elevadorMasCercano(11, 11, 7)); 
